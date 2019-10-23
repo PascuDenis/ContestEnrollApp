@@ -1,0 +1,8 @@
+rootProject.name = 'root'
+include 'clientModel'
+include 'persistance'
+include 'services'
+include 'clientGUI'
+include 'server'
+include 'networking'
+

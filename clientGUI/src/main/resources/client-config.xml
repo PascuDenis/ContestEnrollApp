@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <import resource="classpath*:persistance-config.xml" />
+
+    <!--<bean id="clientService" class="service.ClientService">-->
+        <!--<constructor-arg index="0" ref="participantServerRepository"/>-->
+        <!--<constructor-arg index="1" ref="participantAuditionServerRepository"/>-->
+    <!--</bean>-->
+
+    <bean id="loginService" class="service.LoginService">
+        <constructor-arg ref="serverProps"/>
+    </bean>
+
+
+    <bean id="serverService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="rmi://127.0.0.1:1099/ServerService"/>
+        <property name="serviceInterface" value="repository.utils.IServerService"/>
+    </bean>
+
+    <bean id="proxy" class="controller.proxy.ClientServerProxy"/>
+
+</beans>

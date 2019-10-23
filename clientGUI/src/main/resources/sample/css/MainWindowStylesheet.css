@@ -1,0 +1,35 @@
+.root {
+   -fx-background-image: url("other.jpg");
+   /*-fx-background-size: 852width, 480height;*/
+   /*-fx-background-color: black;*/
+}
+
+.button {
+   -fx-text-fill: white;
+   -fx-font-family: "Arial Narrow";
+   -fx-font-weight: bold;
+   -fx-background-color: linear-gradient(#074b47, #2f8f9e);
+   -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.text-field{
+   -fx-border-color: #800005;
+   -fx-background-color: #57b9ae;
+   -fx-text-fill: white;
+}
+
+.text-field.text{
+   -fx-prompt-text-fill: white;
+   -fx-font-weight: bold;
+}
+
+.jfx-text-field {
+   -fx-prompt-text-fill: white;
+}
+.text-area{
+   -fx-background-color: white;
+}
+
+.check-box{
+   -fx-background-color: #1d9d82;
+}

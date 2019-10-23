@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <import resource="classpath*:persistance-config.xml" />
+
+    <bean id="serverService" class="service.ServerService">
+        <constructor-arg index="0" ref="participantDBRepository"/>
+        <constructor-arg index="1" ref="participantAuditionDBRepository"/>
+        <!--<constructor-arg index="2" ref="databaseLoginRepository"/>-->
+        <constructor-arg index="2" ref="loginHibernateRepository"/>
+    </bean>
+
+    <bean id="server" class="Server">
+        <constructor-arg index="0" ref="serverProps"/>
+    </bean>
+
+    <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+        <property name="serviceName" value="ServerService"/>
+        <property name="service" ref="serverService"/>
+        <property name="serviceInterface" value="repository.utils.IServerService"/>
+        <property name="servicePort" value="1099"/>
+    </bean>
+</beans>

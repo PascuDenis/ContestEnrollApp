@@ -1,0 +1,21 @@
+.root {
+   -fx-background-image: url("background1.jpg");
+   -fx-background-size: 852width, 480height;
+   /*-fx-background-color: black;*/
+}
+
+.button {
+   -fx-text-fill: white;
+   -fx-font-family: "Arial Narrow";
+   -fx-font-weight: bold;
+   -fx-background-color: linear-gradient(#bcb851, #34478c);
+   -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.label{
+   -fx-font-family: "Blackadder ITC";
+   -fx-font-weight: bold;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+   -fx-font-size: 75px;
+   -fx-text-fill: white;
+}
