@@ -45,5 +45,14 @@ E:/CS UBB/Semestrul 4/Medii de proiectare si programare/Laboratoare/LaboratorMpp
         <property name="enable_load_extension" value="true" />
       </driver-properties>
     </data-source>
+    <data-source source="LOCAL" name="lab2DB.db [2]" uuid="20abc703-4908-4eea-9e79-cccfd355679f">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/../LaboratorMpp - Java Hibernate\..\..\DB\lab2DB.db</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
   </component>
 </project>
